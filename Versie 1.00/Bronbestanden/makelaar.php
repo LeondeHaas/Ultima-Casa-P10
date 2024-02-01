@@ -1,4 +1,12 @@
 <?php
+session_start();
+   // UC3: Rollensysteem functioneert niet
+   if ($_SESSION['RID'] != 523) {
+     // Redirect to an unauthorized page if the user does not have permission
+     header("Location: unauthorized.php");
+     exit();
+ }
+
 
      include_once("functions.php");
      
@@ -29,7 +37,7 @@
           </head>
           <body>
                <div class="container">' .
-                    InlogKop($relatieid, "Ultima Casa Makelaar");
+                    InlogKop($relatieid, "Ultima Casa Makelaaar");
                
      $sql = "   SELECT StartDatum, Naam, 
                        relaties.ID AS RID,
