@@ -58,7 +58,7 @@
                 </table>
             </div>
         </div>
-
+        // UC8 : Toestemming gebruik persoonlijke gegevens
         <script>
             function confirmSubmission() {
                 return confirm("Do you allow us to use your information?");
