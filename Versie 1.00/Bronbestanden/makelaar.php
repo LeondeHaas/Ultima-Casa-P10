@@ -29,7 +29,7 @@
           </head>
           <body>
                <div class="container">' .
-                    InlogKop($relatieid, "Ultima Casa Makelaar");
+                    InlogKop($relatieid, "Ultima Casa Makelaaar");
                
      $sql = "   SELECT StartDatum, Naam, 
                        relaties.ID AS RID,
