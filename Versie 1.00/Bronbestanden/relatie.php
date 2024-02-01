@@ -305,7 +305,7 @@
                          <div id="account" class="tab-pane fade">
                               <div class="container">
                                    <div class="col-sm-4 col-md-6 col-lg-4 col-sm-offset-4 col-md-offset-3 col-lg-offset-4">                                     
-                                        <form action="relatieupd.php" method="GET">
+                                        <form action="relatieupd.php" method="GET" onsubmit="return confirm(\'Weet je zeker dat je je account wilt wijzigen?\')">
                                              <h3>Mijn account</h3>
                                              <div class="form-group">
                                                   <label for="Naam">Naam:</label>
@@ -332,12 +332,13 @@
                                                          id="Wachtwoord" name="Wachtwoord" 
                                                          placeholder="Nieuw wachtwoord">
                                              </div>
+                                             // UC4: Veel wachtwoorden zijn zwak
                                              <div class="form-group">
-                                                  <button type="submit" class="action-button" id="upd" name="upd" 
-                                                          value="' . $relatieid . '" title="Mijn account aanpassen.">Wijzigen
-                                                  </button>
-                                                  <button class="action-button"><a href="relatie.php?RID=' . $relatieid . '" >Annuleren</a></button>
-                                             </div>
+                                             <button type="submit" class="action-button" id="upd" name="upd" value="' . $relatieid . '" title="Mijn account aanpassen.">Wijzigen</button>
+                                             <button class="action-button" onclick="return confirm(\'Je wordt omgeleid naar een andere pagina. Weet je zeker dat je wilt annuleren?\');">
+                                                 <a href="relatie.php?RID=' . $relatieid . '">Annuleren</a>
+                                             </button>
+                                         </div>                                         
                                              <div class="form-group">
                                                   <button class="action-button button-column" 
                                                           title="Je Ultima Casa account verwijderen!">
