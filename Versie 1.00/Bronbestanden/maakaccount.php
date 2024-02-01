@@ -1,6 +1,9 @@
 <?php
      include_once("functions.php");
-     
+
+     // Password validation criteria
+     $passwordMinLength = 8; // Minimum length for the password
+
      echo '
 <!DOCTYPE html>
 <html lang="nl">
@@ -33,18 +36,16 @@
                                         </div>
                                         <div class="form-group">
                                              <label for="Email">E-mailadres:</label>
-                                             <input type="email" class="form-control" id="Email" name="Email" placeholder="E-mailadres" required
-                                             pattern="' . $emailpattern . '">
+                                             <input type="email" class="form-control" id="Email" name="Email" placeholder="E-mailadres" required pattern="' . $emailpattern . '">
                                         </div>
                                         <div class="form-group">
                                              <label for="Wachtwoord">Wachtwoord:</label>
-                                             <input type="password" class="form-control" id="Wachtwoord" name="Wachtwoord" placeholder="Wachtwoord" required>
+                                             <input type="password" class="form-control" id="Wachtwoord" name="Wachtwoord" placeholder="Wachtwoord" required pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*\W).{8,}">
+                                             <small>Password must be at least 8 characters long and include at least one number, one letter, and one special character.</small>
                                         </div>
                                         <div class="form-group">
                                              <label for="Telefoon">Mobiel telefoonnummer:</label>
-                                             <input type="tel" class="form-control" id="Telefoon" name="Telefoon" 
-                                                    placeholder="Telefoonnummer" 
-                                                    pattern="' . $telefoonpattern . '" required>
+                                             <input type="tel" class="form-control" id="Telefoon" name="Telefoon" placeholder="Telefoonnummer" pattern="' . $telefoonpattern . '" required>
                                         </div>
                                         <div class="form-group"><br><br>
                                              <button type="submit" class="action-button" title="Uw account aanmaken">Maak account</button>
@@ -59,5 +60,4 @@
           </div>
      </body>
 </html>';
-
 ?>
