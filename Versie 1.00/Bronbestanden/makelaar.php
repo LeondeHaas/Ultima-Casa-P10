@@ -1,4 +1,11 @@
 <?php
+   // UC3: Rollensysteem functioneert niet
+   if ($_SESSION['RID'] != 523) {
+     // Redirect to an unauthorized page if the user does not have permission
+     header("Location: unauthorized.php");
+     exit();
+ }
+
 
      include_once("functions.php");
      
