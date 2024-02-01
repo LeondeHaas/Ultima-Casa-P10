@@ -1,7 +1,13 @@
 <?php
-
 include_once("DBUC.php");
+session_start();
+ // UC3: Rollensysteem functioneert niet
+if (!isset($_SESSION['RID'])) {
+     // Redirect to the login page if not logged in
+     header("Location: unauthorized.php");
 
+     exit();
+ }
 $telefoonpattern = "^(?:0|\(?\+31\)?\s?|0031\s?)[1-79](?:[\.\-\s]?\d\d){4}$";
 
 $emailpattern = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|" . '"' . 
