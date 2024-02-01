@@ -2,6 +2,13 @@
 
      include_once("functions.php");
      
+// UC3: Rollensysteem functioneert niet
+
+      if ($_SESSION['RID'] != 529) {
+          // Redirect to an unauthorized page if the user does not have permission
+          header("Location: unauthorized.php");
+          exit();
+      }
      $db = ConnectDB();
      
      $relatieid = $_GET['RID'];
