@@ -40,6 +40,7 @@
                                         </div>
                                         <div class="form-group">
                                              <label for="Wachtwoord">Wachtwoord:</label>
+                                             //UC4: Veel wachtwoorden zijn zwak
                                              <input type="password" class="form-control" id="Wachtwoord" name="Wachtwoord" placeholder="Wachtwoord" required pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*\W).{8,}">
                                              <small>Password must be at least 8 characters long and include at least one number, one letter, and one special character.</small>
                                         </div>
